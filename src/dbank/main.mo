@@ -5,11 +5,12 @@ import Float "mo:base/Float";
 
 actor DBank {
   stable var startTime = Time.now();
-
+  startTime := Time.now();
   Debug.print(debug_show(startTime));
 
   stable var currentBalance: Float = 300;
-
+  currentBalance := 300;
+  Debug.print(debug_show(currentBalance));
 
   public func topUp(amount: Float) {
     currentBalance := currentBalance + amount;
