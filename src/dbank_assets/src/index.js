@@ -23,6 +23,8 @@ document.querySelector("form").addEventListener("submit", async function(event) 
     await dbank.withdraw(outputAmount);
   }
 
+  // await dbank.compound();
+
   await showResult("input-amount");
 
   async function showResult(inputOrOutput) {
