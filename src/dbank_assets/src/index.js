@@ -25,13 +25,12 @@ document.querySelector("form").addEventListener("submit", async function(event) 
 
   // await dbank.compound();
 
-  await showResult("input-amount");
+  const currentAmount = await dbank.checkBalance();
+  document.getElementById("value").innerText = Math.round(currentAmount * 100) / 100;
 
-  async function showResult(inputOrOutput) {
-    const currentAmount = await dbank.checkBalance();
-    document.getElementById("value").innerText = Math.round(currentAmount * 100) / 100;
+  document.getElementById("input-amount").value = "";
+  button.removeAttribute("disabled");
 
-    document.getElementById(inputOrOutput).value = "";
-    button.removeAttribute("disabled");
-  }
+  document.getElementById("withdrawal-amount").value = "";
+  button.removeAttribute("disabled");
 });
